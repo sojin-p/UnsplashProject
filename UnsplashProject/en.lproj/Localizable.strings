@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  UnsplashProject
+
+  Created by 박소진 on 2023/09/11.
+  
+*/
+
+//변수명 최대한 구체적으로! 뭐에대한 무엇인지(세팅에대한 취소) 스네이크케이스 카멜케이스는 선택이지만 가독성은 스네이크가 좋아서..
+"nickname_placeholder" = "Enter NickName";
+
+"nickname_result" = "My nickname is %@, %@, %@";
+
+"age_result" = "I'm %d years old";

@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  UnsplashProject
+
+  Created by 박소진 on 2023/09/11.
+  
+*/
+
+"NSLocationWhenInUseUsageDescription" = "이러쿵저러쿵 권한 필요";
+"CFBundleDisplayName" = "언스플래시프로젝트"; //앱 이름!

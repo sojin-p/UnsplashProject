@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  UnsplashProject
+
+  Created by 박소진 on 2023/09/11.
+  
+*/
+
+"nickname_placeholder" = "ニックネームを入力してください";
+
+"nickname_result" = "일본어 당신의 %@";
