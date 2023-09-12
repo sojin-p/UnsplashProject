@@ -17,7 +17,7 @@ class LoginViewModel {
     
     //4.
     func checkValidation() {
-        if id.value.count >= 6 {// && pw.value.count >= 4 { //왜 처음에 안됐나? 패스워드 값을 뷰모델에 전달하지 않았기 때문에!
+        if id.value.count >= 6 && pw.value.count >= 4 { //왜 처음에 안됐나? 패스워드 값을 뷰모델에 전달하지 않았기 때문에!
             //4-3.
             isValid.value = true
         } else {

@@ -16,9 +16,11 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 400
+        
         print(#function, "PhotoVC")
         
-        viewModel.fetchPhoto()
+        viewModel.fetchData()
         
         //리스트 데이터가 바뀌면 뭘 해줄래?
         viewModel.list.bind { _ in
@@ -41,11 +43,11 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell")!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell") as? PhotoTableViewCell else { return UITableViewCell() }
         
-        let data = viewModel.cellForRowAt(at: indexPath)
+        //let data = viewModel.cellForRowAt(at: indexPath)
         
-        cell.backgroundColor = .lightGray
+        cell.configureCell(viewModel: viewModel, indexPath: indexPath)
         
         return cell
     }

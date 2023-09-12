@@ -34,6 +34,7 @@ class APIService {
             do {
                 let result = try JSONDecoder().decode(Photo.self, from: data!)
                 completion(result)
+                print(result)
                 
             } catch {
                 print(error)

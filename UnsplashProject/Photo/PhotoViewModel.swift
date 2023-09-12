@@ -20,8 +20,8 @@ class PhotoViewModel {
     }
     
     //네트워크 통신 (<b>이런거 지우거나 넘버포매터를 써야하거나 할 때. 대신 엄청 여러화면이면 익스텐션으로 빼는 것이..)
-    func fetchPhoto() {
-        APIService.shared.searchPhoto(query: "sky") { photo in
+    func fetchData() {
+        APIService.shared.searchPhoto(query: "love") { photo in
             guard let photo else {
                 return
             }
@@ -29,5 +29,19 @@ class PhotoViewModel {
         }
     }
     
+    func fetchPhoto(at indexPath: IndexPath, completion: @escaping (Data) -> Void) {
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: self.list.value.results?[indexPath.row].urls.thumb ?? ""), let data = try? Data(contentsOf: url ) {
+                
+                DispatchQueue.main.async {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
 }
+
+
 

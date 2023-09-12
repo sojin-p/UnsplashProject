@@ -25,6 +25,7 @@
 		236E6BB12AB02A5B008A0973 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB02AB02A5B008A0973 /* APIService.swift */; };
 		236E6BB32AB02B4E008A0973 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB22AB02B4E008A0973 /* PhotoViewController.swift */; };
 		236E6BB52AB02DA5008A0973 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB42AB02DA5008A0973 /* PhotoViewModel.swift */; };
+		236E6BB72AB06E9C008A0973 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		236E6BB02AB02A5B008A0973 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		236E6BB22AB02B4E008A0973 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		236E6BB42AB02DA5008A0973 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				236E6BB02AB02A5B008A0973 /* APIService.swift */,
 				236E6BB22AB02B4E008A0973 /* PhotoViewController.swift */,
 				236E6BB42AB02DA5008A0973 /* PhotoViewModel.swift */,
+				236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236E6BB72AB06E9C008A0973 /* PhotoTableViewCell.swift in Sources */,
 				236E6B8D2AAEBAB3008A0973 /* String+Extension.swift in Sources */,
 				236E6B702AAE9932008A0973 /* ViewController.swift in Sources */,
 				236E6B6C2AAE9932008A0973 /* AppDelegate.swift in Sources */,

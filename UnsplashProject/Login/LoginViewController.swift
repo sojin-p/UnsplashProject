@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func pwTextFieldChanged() {
-        viewModel.pw.value = idTextField.text!
+        viewModel.pw.value = pwTextField.text!
         viewModel.checkValidation()
     }
     
