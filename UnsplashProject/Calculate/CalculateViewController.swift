@@ -18,6 +18,37 @@ class CalculateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //1. 사용자가 입력을 바꾸면 실시간 업데이트 하고 싶다.
+        firstTextField.addTarget(self, action: #selector(firstTextFieldChanged), for: .editingChanged)
+        secondTextField.addTarget(self, action: #selector(secondTextFieldChanged), for: .editingChanged)
+        
+        //어떤 기능을 넣어줄지(어떻게 바인딩을 할지) 바인드 함수 내부 실제 실행은 딱 한 번만 됨!
+        viewModel.firstNumber.bind { number in
+            self.firstTextField.text = number
+        }
+        
+        viewModel.secondNumber.bind { number in
+            self.secondTextField.text = number
+        }
+        
+        viewModel.resultText.bind { text in
+            self.resultLabel.text = text
+        }
+        
+    }
+    
+    //2. 밸류에 넣어야 didSet이 실행되니까!
+    @objc func firstTextFieldChanged() {
+        //3. 에러나는 이유? 닐을 받을 수 있어야 해서 CalculaterViewModel에 가서 타입어노테이션 CustomObservable<String?>
+        viewModel.firstNumber.value = firstTextField.text
+        
+        //5. 텍스트가 바뀔 때마다 뷰 모델에 연산해달라고 요청!
+        viewModel.calculate()
+    }
+    
+    @objc func secondTextFieldChanged() {
+        viewModel.secondNumber.value = secondTextField.text
+        viewModel.calculate()
     }
     
 

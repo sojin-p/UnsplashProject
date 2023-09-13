@@ -22,10 +22,10 @@ class CustomObservable<T> { //1. 제네릭으로 T
         self.value = value
     }
     
-    func introduce(_ sample: @escaping (T) -> Void) {
+    func bind(_ sample: @escaping (T) -> Void) { //4.바인드로 이름 바꾸기
         print("저는 \(value)입니다.")
-        sample(value)
-        listener = sample
+        sample(value) //vc에서 작성한게 들어옴
+        listener = sample //리스너에 내용 업데이트
     }
     
     /*
