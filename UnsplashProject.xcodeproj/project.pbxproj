@@ -26,6 +26,9 @@
 		236E6BB32AB02B4E008A0973 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB22AB02B4E008A0973 /* PhotoViewController.swift */; };
 		236E6BB52AB02DA5008A0973 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB42AB02DA5008A0973 /* PhotoViewModel.swift */; };
 		236E6BB72AB06E9C008A0973 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */; };
+		236E6BF12AB139E7008A0973 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BF02AB139E7008A0973 /* CalculateViewController.swift */; };
+		236E6BF32AB13AA1008A0973 /* CalculaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BF22AB13AA1008A0973 /* CalculaterViewModel.swift */; };
+		236E6BF52AB13DAF008A0973 /* SojinObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6BF42AB13DAF008A0973 /* SojinObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		236E6BB22AB02B4E008A0973 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		236E6BB42AB02DA5008A0973 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		236E6BF02AB139E7008A0973 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		236E6BF22AB13AA1008A0973 /* CalculaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculaterViewModel.swift; sourceTree = "<group>"; };
+		236E6BF42AB13DAF008A0973 /* SojinObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SojinObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		236E6B6A2AAE9932008A0973 /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				236E6BEF2AB139B4008A0973 /* Calculate */,
 				236E6BAD2AB02A44008A0973 /* Photo */,
 				236E6B9E2AAFED3C008A0973 /* Login */,
 				236E6B6B2AAE9932008A0973 /* AppDelegate.swift */,
@@ -129,6 +136,16 @@
 				236E6BB62AB06E9C008A0973 /* PhotoTableViewCell.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		236E6BEF2AB139B4008A0973 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				236E6BF02AB139E7008A0973 /* CalculateViewController.swift */,
+				236E6BF22AB13AA1008A0973 /* CalculaterViewModel.swift */,
+				236E6BF42AB13DAF008A0973 /* SojinObservable.swift */,
+			);
+			path = Calculate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236E6BF32AB13AA1008A0973 /* CalculaterViewModel.swift in Sources */,
+				236E6BF52AB13DAF008A0973 /* SojinObservable.swift in Sources */,
 				236E6BB72AB06E9C008A0973 /* PhotoTableViewCell.swift in Sources */,
 				236E6B8D2AAEBAB3008A0973 /* String+Extension.swift in Sources */,
 				236E6B702AAE9932008A0973 /* ViewController.swift in Sources */,
@@ -214,6 +233,7 @@
 				236E6BB12AB02A5B008A0973 /* APIService.swift in Sources */,
 				236E6BB32AB02B4E008A0973 /* PhotoViewController.swift in Sources */,
 				236E6BAF2AB02A51008A0973 /* Photo.swift in Sources */,
+				236E6BF12AB139E7008A0973 /* CalculateViewController.swift in Sources */,
 				236E6BA62AAFF5B5008A0973 /* LoginViewController.swift in Sources */,
 				236E6B6E2AAE9932008A0973 /* SceneDelegate.swift in Sources */,
 				236E6BAA2AB00159008A0973 /* SampleViewModel.swift in Sources */,
