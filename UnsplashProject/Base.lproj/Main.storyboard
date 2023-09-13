@@ -268,7 +268,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYr-6U-frn">
-                                <rect key="frame" x="64" y="237" width="250" height="54"/>
+                                <rect key="frame" x="16" y="237" width="361" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-5S-yJZ">
+                                <rect key="frame" x="16" y="336" width="361" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -282,6 +289,7 @@
                         <outlet property="firstTextField" destination="TYp-2j-etQ" id="jqF-MB-wre"/>
                         <outlet property="resultLabel" destination="RYr-6U-frn" id="fbg-3u-8TM"/>
                         <outlet property="secondTextField" destination="nko-eg-5If" id="4tm-Ye-1ya"/>
+                        <outlet property="tampLabel" destination="WIk-5S-yJZ" id="oV7-vf-W70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTf-QM-DQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
