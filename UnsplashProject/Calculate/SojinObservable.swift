@@ -14,7 +14,7 @@ class CustomObservable<T> { //1. 제네릭으로 T
     var value: T { //2. name에서 value로 바꾸기
         didSet {
             listener?(value) //3. 데이터를 바인딩 하는 역할. 데이터가 바뀔때마다 함수가 실행 되니까!
-            print("사용자의 이름이 \(value)(으)로 변경되었습니다.")
+            print("didSet value: \(value)(으)로 변경")
         }
     }
     
@@ -23,9 +23,10 @@ class CustomObservable<T> { //1. 제네릭으로 T
     }
     
     func bind(_ sample: @escaping (T) -> Void) { //4.바인드로 이름 바꾸기
-        print("저는 \(value)입니다.")
+        print("bind 시작, value: \(value)")
         sample(value) //vc에서 작성한게 들어옴
         listener = sample //리스너에 내용 업데이트
+        print("bind 끝")
     }
     
     /*
