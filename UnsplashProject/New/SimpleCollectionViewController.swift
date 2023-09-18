@@ -15,17 +15,8 @@ class SimpleCollectionViewController: UIViewController {
         case second = 1
     }
     
-    var list = [User(name: "Hue", age: 23),
-                User(name: "Hue", age: 23),
-                User(name: "Bran", age: 20),
-                User(name: "Kokojong", age: 20)]
-    
-    var list2 = [User(name: "하아암", age: 23),
-                 User(name: "졸리다", age: 23),
-                 User(name: "정신차려", age: 20),
-                 User(name: "ㅠㅠㅠ", age: 20)]
-    
-    //Array<엘리먼트>
+    //2.
+    var viewModel = SimpleViewModel()
     
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
 
@@ -35,26 +26,54 @@ class SimpleCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(collectionView)
+        //5-1. (5-2는 익스텐션)
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
         
+        
+        view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
+        configureDataSource() //호출
+        
+        //3. list 바뀔 때마다 뭐 할지
+//        updateSnapshot()
+        viewModel.list.bind { user in // user: 달라지는 value를 항상 매개변수로 받고있다.
+            self.updateSnapshot()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+            self.viewModel.append()
+        }
+        
+        //바뀐 UI 빨리 보고싶을 때
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+////            self.list.insert(User(name: "물고기", age: 1), at: 2)
+//            self.list.remove(at: 1)
+//            self.updateSnapshot() //reloedData 대신!
+//        }
+        
+    }
+    
+    func updateSnapshot() {
         //Diffable 디퍼블 3. number~ 처리 ---------------------------------
         var snapshot = NSDiffableDataSourceSnapshot<String, User>() //스냅샷 찍을 수 있게 도와주는 구조체, dataSource와 타입 맞추기
         snapshot.appendSections(["SeSAC 섹션", "생각 섹션"])//섹션 1개, 배열 타입인데 개별 섹션이라 [0,1,2,3] 섹션 4개 쓸 때 근데 이게 인덱스가 아님. 그냥 섹션의 고유숫자! 100,120 이렇게 해도 가능
+
+        //4. 오류난 지점
         //snapshot.appendItems(list) //list의 엘리먼트 수 만큼
-        snapshot.appendItems(list, toSection: "SeSAC 섹션")
-        snapshot.appendItems(list2, toSection: "생각 섹션") //1번 섹션에 넣을게 - 나중에 열거형으로
+        snapshot.appendItems(viewModel.list.value, toSection: "SeSAC 섹션")
+        snapshot.appendItems(viewModel.list2, toSection: "생각 섹션") //1번 섹션에 넣을게 - 나중에 열거형으로
         //둘 다 list를 넣으면 오류발생. 어떻게할까? 배열을 하나 더 생성
         
         dataSource.apply(snapshot) //갱신
         
         //--------------------------------------------------------------
     }
-    
-    
     
     static private func createLayout() -> UICollectionViewLayout {
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped) //side~ 보통 아이패드에서 사용
@@ -82,7 +101,7 @@ class SimpleCollectionViewController: UIViewController {
             content.prefersSideBySideTextAndSecondaryText = false //나이를 왼쪽으로 보냄
             content.textToSecondaryTextVerticalPadding = 10
             content.imageToTextPadding = 20
-            content.secondaryText = "\(itemIdentifier.age)"
+            content.secondaryText = "\(itemIdentifier.age)살"
             content.image = UIImage(systemName: "star.fill")
             cell.contentConfiguration = content
             
@@ -106,6 +125,37 @@ class SimpleCollectionViewController: UIViewController {
     }
     
 }
+
+extension SimpleCollectionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //4-1. 셀을 선택했을 때! (4-2는 뷰 모델에!)
+//        viewModel.removeUser(idx: indexPath.item)
+        
+        //6-1. 만약 셀 정보를 다음 화면ㅇㅔ 넘긴다면?
+        let user = viewModel.list.value[indexPath.item] //이건 인덱스 기반
+        //6-2. 디퍼블이니까 인덱스XXX 모델 자체를 빼오기
+        guard let item = dataSource.itemIdentifier(for: indexPath) else {
+            //해당 데이터가 없다면? 얼럿이나 토스트. 문제가있으니 다시시도 해달라
+            return
+        }
+//        print(user)
+        dump(user)
+    }
+    
+}
+
+//5-2.
+extension SimpleCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //5-4.
+        viewModel.insertUser(name: searchBar.text!) //나중에 옵셔널 처리도 뷰 모델
+    
+    }
+}
+
 
 //extension SimpleCollectionViewController: UICollectionViewDataSource {
 //

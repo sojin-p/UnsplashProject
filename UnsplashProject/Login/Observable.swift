@@ -12,7 +12,7 @@ class Observable<T> { //타입에 관계없이 하기 위해 제네릭구조로 
     private var listener: ((T) -> Void)?
     
     var value: T {
-        didSet {
+        didSet { //값이 바뀔때마다 단방향
 //            print("didset", value)
             listener?(value) // 클로저를 실행하기 위한 역할..?
         }

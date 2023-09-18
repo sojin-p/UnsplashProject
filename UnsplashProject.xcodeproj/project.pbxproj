@@ -32,6 +32,9 @@
 		236E6C032AB296F5008A0973 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C022AB296F5008A0973 /* SimpleTableViewController.swift */; };
 		236E6C052AB2A004008A0973 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C042AB2A004008A0973 /* SimpleCollectionViewController.swift */; };
 		236E6C082AB2A9DA008A0973 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 236E6C072AB2A9DA008A0973 /* SnapKit */; };
+		236E6C252AB7D340008A0973 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C242AB7D340008A0973 /* NumberViewController.swift */; };
+		236E6C272AB7D926008A0973 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C262AB7D926008A0973 /* NumberViewModel.swift */; };
+		236E6C292AB7E798008A0973 /* SimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C282AB7E798008A0973 /* SimpleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		236E6BF42AB13DAF008A0973 /* SojinObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SojinObservable.swift; sourceTree = "<group>"; };
 		236E6C022AB296F5008A0973 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		236E6C042AB2A004008A0973 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		236E6C242AB7D340008A0973 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		236E6C262AB7D926008A0973 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		236E6C282AB7E798008A0973 /* SimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 				236E6BA72AAFFDEB008A0973 /* SampleViewController.swift */,
 				236E6BA92AB00159008A0973 /* SampleViewModel.swift */,
 				236E6BAB2AB00E42008A0973 /* LoginViewModel.swift */,
+				236E6C242AB7D340008A0973 /* NumberViewController.swift */,
+				236E6C262AB7D926008A0973 /* NumberViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			children = (
 				236E6C022AB296F5008A0973 /* SimpleTableViewController.swift */,
 				236E6C042AB2A004008A0973 /* SimpleCollectionViewController.swift */,
+				236E6C282AB7E798008A0973 /* SimpleViewModel.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -251,9 +260,11 @@
 				236E6B8D2AAEBAB3008A0973 /* String+Extension.swift in Sources */,
 				236E6B702AAE9932008A0973 /* ViewController.swift in Sources */,
 				236E6B6C2AAE9932008A0973 /* AppDelegate.swift in Sources */,
+				236E6C272AB7D926008A0973 /* NumberViewModel.swift in Sources */,
 				236E6BA22AAFF2FC008A0973 /* Observable.swift in Sources */,
 				236E6BB12AB02A5B008A0973 /* APIService.swift in Sources */,
 				236E6BB32AB02B4E008A0973 /* PhotoViewController.swift in Sources */,
+				236E6C252AB7D340008A0973 /* NumberViewController.swift in Sources */,
 				236E6BAF2AB02A51008A0973 /* Photo.swift in Sources */,
 				236E6BF12AB139E7008A0973 /* CalculateViewController.swift in Sources */,
 				236E6BA62AAFF5B5008A0973 /* LoginViewController.swift in Sources */,
@@ -261,6 +272,7 @@
 				236E6BAA2AB00159008A0973 /* SampleViewModel.swift in Sources */,
 				236E6C052AB2A004008A0973 /* SimpleCollectionViewController.swift in Sources */,
 				236E6BB52AB02DA5008A0973 /* PhotoViewModel.swift in Sources */,
+				236E6C292AB7E798008A0973 /* SimpleViewModel.swift in Sources */,
 				236E6C032AB296F5008A0973 /* SimpleTableViewController.swift in Sources */,
 				236E6BA82AAFFDEB008A0973 /* SampleViewController.swift in Sources */,
 				236E6BAC2AB00E42008A0973 /* LoginViewModel.swift in Sources */,
