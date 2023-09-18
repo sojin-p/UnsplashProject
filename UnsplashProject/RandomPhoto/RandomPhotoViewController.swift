@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class RandomPhotoViewController: UIViewController {
+final class RandomPhotoViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout())
@@ -24,7 +24,7 @@ class RandomPhotoViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
-        setConstraints()
+        
         viewModel.fetchRandomPhoto()
         
         configureDataSource()
@@ -35,24 +35,9 @@ class RandomPhotoViewController: UIViewController {
 
     }
     
-    @objc func randomButtonClicked() {
-        print("버튼 클릭")
-    }
-    
-    private func configure() {
-        title = "랜덤 이미지"
-        view.addSubview(collectionView)
-        
-        view.backgroundColor = .lightGray
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "랜덤", style: .plain, target: self, action: #selector(randomButtonClicked))
-        navigationItem.rightBarButtonItem?.tintColor = .black
-    }
-    
-    private func setConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+    @objc private func randomButtonClicked() {
+        viewModel.removeList()
+        viewModel.fetchRandomPhoto()
     }
     
     private func updateSnapshot() {
@@ -66,17 +51,14 @@ class RandomPhotoViewController: UIViewController {
         
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, RandomPhoto> { cell, indexPath, itemIdentifier in
             var content = UIListContentConfiguration.valueCell()
-            content.text = "asfsfasfaf"
+            content.text = itemIdentifier.altDescription
+            content.textProperties.alignment = .center
+            content.textProperties.font = .systemFont(ofSize: 15, weight: .medium)
             
-            //4. 이미지 처리
-            DispatchQueue.global().async {
-                let url = URL(string: itemIdentifier.urls.thumb)!
-                let data = try? Data(contentsOf: url)
-                
-                DispatchQueue.main.async {
-                    content.image = UIImage(data: data!)
-                    cell.contentConfiguration = content
-                }
+            self.viewModel.setCellRegistrationPhoto(randomImage: itemIdentifier) { data in
+                content.image = UIImage(data: data)
+                content.imageProperties.cornerRadius = 10
+                cell.contentConfiguration = content
             }
             
         }
@@ -95,6 +77,24 @@ class RandomPhotoViewController: UIViewController {
         configuration.backgroundColor = .white
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
         return layout
+    }
+    
+    private func configure() {
+        title = "랜덤 이미지"
+        view.addSubview(collectionView)
+        
+        view.backgroundColor = .lightGray
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "랜덤", style: .plain, target: self, action: #selector(randomButtonClicked))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        
+        setConstraints()
+    }
+    
+    private func setConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
 }

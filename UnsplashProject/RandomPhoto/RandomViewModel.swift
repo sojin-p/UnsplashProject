@@ -11,6 +11,10 @@ class RandomViewModel {
     
     var list: Observable<[RandomPhoto]> = Observable([])
     
+    func removeList() {
+        list.value = []
+    }
+    
     func fetchRandomPhoto() {
         APIService.shared.fetchRandomPhoto { photo in
             DispatchQueue.main.async {
@@ -22,5 +26,18 @@ class RandomViewModel {
                 print("---------",self.list.value)
             }
         }
+    } //fetchRandomPhoto()
+    
+    func setCellRegistrationPhoto(randomImage: RandomPhoto, completion: @escaping (Data) -> Void) {
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: randomImage.urls.thumb), let data = try? Data(contentsOf: url ) {
+                
+                DispatchQueue.main.async {
+                    completion(data)
+                }
+            }
+        }
     }
-}
+    
+}//RandomViewModel
