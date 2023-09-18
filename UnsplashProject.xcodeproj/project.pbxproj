@@ -35,6 +35,9 @@
 		236E6C252AB7D340008A0973 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C242AB7D340008A0973 /* NumberViewController.swift */; };
 		236E6C272AB7D926008A0973 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C262AB7D926008A0973 /* NumberViewModel.swift */; };
 		236E6C292AB7E798008A0973 /* SimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C282AB7E798008A0973 /* SimpleViewModel.swift */; };
+		236E6C2F2AB881F5008A0973 /* RandomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C2E2AB881F5008A0973 /* RandomPhotoViewController.swift */; };
+		236E6C312AB8899A008A0973 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C302AB8899A008A0973 /* RandomViewModel.swift */; };
+		236E6C332AB89198008A0973 /* RandomPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E6C322AB89198008A0973 /* RandomPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		236E6C242AB7D340008A0973 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		236E6C262AB7D926008A0973 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
 		236E6C282AB7E798008A0973 /* SimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewModel.swift; sourceTree = "<group>"; };
+		236E6C2E2AB881F5008A0973 /* RandomPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewController.swift; sourceTree = "<group>"; };
+		236E6C302AB8899A008A0973 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
+		236E6C322AB89198008A0973 /* RandomPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		236E6B6A2AAE9932008A0973 /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				236E6C2D2AB881C1008A0973 /* RandomPhoto */,
 				236E6C012AB296DB008A0973 /* New */,
 				236E6BEF2AB139B4008A0973 /* Calculate */,
 				236E6BAD2AB02A44008A0973 /* Photo */,
@@ -171,6 +178,16 @@
 				236E6C282AB7E798008A0973 /* SimpleViewModel.swift */,
 			);
 			path = New;
+			sourceTree = "<group>";
+		};
+		236E6C2D2AB881C1008A0973 /* RandomPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				236E6C2E2AB881F5008A0973 /* RandomPhotoViewController.swift */,
+				236E6C302AB8899A008A0973 /* RandomViewModel.swift */,
+				236E6C322AB89198008A0973 /* RandomPhoto.swift */,
+			);
+			path = RandomPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +275,7 @@
 				236E6BF52AB13DAF008A0973 /* SojinObservable.swift in Sources */,
 				236E6BB72AB06E9C008A0973 /* PhotoTableViewCell.swift in Sources */,
 				236E6B8D2AAEBAB3008A0973 /* String+Extension.swift in Sources */,
+				236E6C2F2AB881F5008A0973 /* RandomPhotoViewController.swift in Sources */,
 				236E6B702AAE9932008A0973 /* ViewController.swift in Sources */,
 				236E6B6C2AAE9932008A0973 /* AppDelegate.swift in Sources */,
 				236E6C272AB7D926008A0973 /* NumberViewModel.swift in Sources */,
@@ -266,6 +284,8 @@
 				236E6BB32AB02B4E008A0973 /* PhotoViewController.swift in Sources */,
 				236E6C252AB7D340008A0973 /* NumberViewController.swift in Sources */,
 				236E6BAF2AB02A51008A0973 /* Photo.swift in Sources */,
+				236E6C332AB89198008A0973 /* RandomPhoto.swift in Sources */,
+				236E6C312AB8899A008A0973 /* RandomViewModel.swift in Sources */,
 				236E6BF12AB139E7008A0973 /* CalculateViewController.swift in Sources */,
 				236E6BA62AAFF5B5008A0973 /* LoginViewController.swift in Sources */,
 				236E6B6E2AAE9932008A0973 /* SceneDelegate.swift in Sources */,
